@@ -15,8 +15,29 @@
 */
 class Program
 {
+    static void DisplayCars(string[] garage)
+    {
+        Console.WriteLine("véhicules du Garage : ");
+        for (int i = 0; i < garage.Length; i++)
+        {
+            Console.WriteLine("\n"+(i+1).ToString() + "" + garage[i]);
+            
+        }
+    }
+    
     static void Main(string[] args)
     {
+        String[] garage = { "Banshee", "Zentorno", "Sultan", "Sanchez", "Buzzard" };
+
+        DisplayCars(garage);
+        
+        Console.WriteLine(" Saisis le numéro du véhicule que tu souhaites remplacer ( 1 - 5 ) ");
+        int remplacer = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine(" Quel est le nom du nouveau véhicule ? ");
+        string name = Console.ReadLine();
+        garage[(remplacer-1)] = name;
+        
+        DisplayCars(garage);
         
     }
 }
